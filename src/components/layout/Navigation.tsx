@@ -1,6 +1,8 @@
-import { Home, Upload, MessageSquare, Search, Activity } from "lucide-react";
+import { Home, Upload, MessageSquare, Search, Activity, LogOut } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { cn } from "@/lib/utils";
+import { useAuth } from "@/hooks/useAuth";
+import { Button } from "@/components/ui/button";
 
 const navItems = [
   { to: "/", icon: Home, label: "Dashboard" },
@@ -11,6 +13,7 @@ const navItems = [
 ];
 
 export function Navigation() {
+  const { signOut, user } = useAuth();
   return (
     <nav className="glass-elevated border-b border-border/50 sticky top-0 z-50">
       <div className="container mx-auto px-6 py-4">
@@ -52,6 +55,17 @@ export function Navigation() {
               <div className="w-2 h-2 rounded-full bg-success animate-pulse-glow" />
               <span className="text-xs font-medium text-success">Healthy</span>
             </div>
+            {user && (
+              <Button
+                onClick={signOut}
+                variant="ghost"
+                size="sm"
+                className="gap-2"
+              >
+                <LogOut className="h-4 w-4" />
+                <span className="hidden sm:inline">Sign Out</span>
+              </Button>
+            )}
           </div>
         </div>
 
