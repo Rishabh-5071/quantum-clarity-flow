@@ -9,7 +9,6 @@ import Dashboard from "./pages/Dashboard";
 import Upload from "./pages/Upload";
 import Chat from "./pages/Chat";
 import Search from "./pages/Search";
-import Monitoring from "./pages/Monitoring";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -29,7 +28,6 @@ const App = () => (
               <Route path="/upload" element={<Upload />} />
               <Route path="/chat" element={<Chat />} />
               <Route path="/search" element={<Search />} />
-              <Route path="/monitoring" element={<Monitoring />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>

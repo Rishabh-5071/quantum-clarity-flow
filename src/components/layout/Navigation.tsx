@@ -1,4 +1,4 @@
-import { Home, Upload, MessageSquare, Search, Activity } from "lucide-react";
+import { Home, Upload, MessageSquare, Search } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { cn } from "@/lib/utils";
 
@@ -7,7 +7,6 @@ const navItems = [
   { to: "/upload", icon: Upload, label: "Upload" },
   { to: "/chat", icon: MessageSquare, label: "Q&A" },
   { to: "/search", icon: Search, label: "Search" },
-  { to: "/monitoring", icon: Activity, label: "Monitoring" },
 ];
 
 export function Navigation() {
